@@ -1,0 +1,927 @@
+﻿#Multiple2 {
+    max-width: 100%;
+    width: 180px;
+}
+
+#Multiple1 {
+    max-width: 100%;
+    width: 180px;
+}
+
+
+.jumbotron {
+    display : flex ;  
+    padding: 10px;
+    padding-right: 10px;
+    background-color: #FFFFFF;
+    width: 100% !important;
+    height: auto;
+    margin: auto; /* Center the container */
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction : row ;  
+    margin-bottom : 5px;  
+}
+
+.container.body-content {
+    height: 100%;
+}
+
+
+body {
+    background-color: #dedcde66;
+}
+
+
+.row{
+
+    margin-left :0px ; 
+    margin-right :0px ;  
+
+}
+
+
+
+@media (min-width: 800px) {
+
+    .container {
+        width: auto;
+    }
+
+}
+
+
+@media (min-width: 1100px) {
+    jumbotron {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+}
+@media (max-width: 1100px) {
+    
+
+    .jumbotron {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         flex-wrap: wrap; 
+        flex-direction: row;
+    }
+
+    #DropDownList1 {
+
+
+        width :150px ; 
+
+    }
+    #DropDownList2 {
+        width: 150px;
+    }
+
+    #Multiple2 {
+        max-width: 100%;
+        width: 150px;
+    }
+
+    #Multiple1 {
+        max-width: 100%;
+        width: 150px;
+    }
+
+
+}
+
+
+
+/* style for table container data  Alarm  */
+
+.Table_Alarm {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    border: 2px solid #bbb2b2;
+    background-color: #FFFFFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 0px;
+    border-top-right-radius: 10px;
+    border-top: none;
+    border-left: 1px solid #bbb2b2;
+}
+
+    .Table_Alarm table {
+        width: 100%; /* Table width is 100% of its container */
+        table-layout: fixed; /* Fixed table layout */
+        border-collapse: collapse; /* Combine cell borders */
+    }
+
+    .Table_Alarm td {
+        border-top: 0.5px solid #eee;
+        border-bottom: 2px solid #eee;
+        border-left: 0.5px solid #eee;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+
+    .Table_Alarm th {
+        padding: 5px; /* Add padding for cell content */
+        text-align: center;
+    }
+
+
+td:first-child {
+    width: fit-content; 
+}
+
+
+
+/*td:nth-child(3) {
+    width: 15vh;*/ /* Width for the Line cell */
+/*}
+td:nth-child(4) {
+    width: 15vh;*/ /* Width for the Value cell */
+/*}*/
+
+#Table_Field {
+    width: 100%;
+    table-layout: fixed;
+}
+
+    #Table_Field td {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+
+
+ input[type="text"],
+ input[type="datetime-local"] {
+    width: 100%;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #a1a1a1;
+}
+
+
+}
+/*   modify the style of clicking  in row table   */
+.selectable-row {
+    cursor: pointer;
+}
+
+    .selectable-row:hover {
+        background-color: lightgray;
+    }
+
+    .selectable-row.selected {
+        background-color: yellow;
+    }
+
+
+
+/* Your existing styles */
+.TagSelected {
+    background-color: #fafafc;
+    width: fit-content;
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0;
+    margin-top: auto;
+    margin-bottom: 0px;
+    list-style-type: none;
+}
+
+    .TagSelected ul {
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+
+    .TagSelected li {
+        background-color: #fafafc;
+        display: inline-block;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 0 10px 15px;
+        transition: 0.3s;
+        font-size: 17px;
+        border-bottom: 3px solid #f3f4f8;
+        text-align: center;
+        display: inline-flex;
+    }
+
+        .TagSelected li:hover {
+            background-color: white;
+            color: white;
+            text-decoration: none;
+        }
+
+        .TagSelected li.active a {
+            color: dodgerblue;
+            text-decoration: none;
+        }
+
+        .TagSelected li a {
+            text-decoration: none;
+        }
+
+        .TagSelected li.active {
+            background-color: white;
+            color: white;
+            border-bottom: 2px solid transparent;
+        }
+
+        .TagSelected li a span {
+            padding-right: 100px;
+            font-family: sans-serif;
+            font-size: 16px;
+            text-decoration: none; /* Remove text underline */
+            font-weight: bold;
+        }
+        @media screen and (max-width: 1250px) {
+            .TagSelected li a span {
+                padding-right: 50px; /* Apply this padding when the page width is less than 850px */
+            }
+        }
+
+        @media screen and (max-width: 825px) {
+            .TagSelected li a span {
+                padding-right: 20px; /* Apply this padding when the page width is less than 850px */
+            }
+        }
+
+
+        .TagSelected li:after {
+            background-color: #d6d8e3;
+            content: "";
+            display: block;
+            height: 30px;
+            position: relative;
+            right: -1px;
+            width: 1px;
+            z-index: 1;
+        }
+
+        .TagSelected li.active:after {
+            top: -10px;
+        }
+
+
+#Field_Fix{
+
+    position :sticky;  
+   
+
+
+}
+
+.Container_Mar {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    background: white;
+    justify-content: center;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: teal;
+    border-color: teal;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+input, select, textarea {
+    max-width: -webkit-fill-available;
+}
+
+input:disabled {
+    background-color: #ddd;
+    color: #666;
+}
+
+.container {
+    min-width: 750px; /* Adjust the value as needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+
+/*Change the style of DropList*/
+
+
+
+
+.data_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .data_table th, .data-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: bold
+    }
+
+    .data_table:hover {
+        background-color: palevioletred;
+    }
+
+.fa.fa-edit:hover {
+    background-color: #f0f0f0; /* Change #f0f0f0 to your desired hover color */
+}
+
+.fa.fa-edit:active {
+    background-color: #e0e0e0; /* Change #e0e0e0 to your desired active (click) color */
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+
+
+
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width :fit-content;
+}
+
+.modal-Graph{
+
+    width:fit-content ; 
+
+    height : auto ; 
+   
+
+
+
+}
+
+.Layout {
+
+    display: flex;
+    flex-direction: row;
+    
+}
+/* style.css */
+.color-bar {
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, red 0% 13%, #FFA500 13% 38%, #00FF00 38% 62.5%, #FFA500 62.5% 87.5%, red 87.5% 100%);
+    border: 2px solid #f3e4e4;
+}
+
+.marker {
+    position: absolute;
+    top: 100%; /* Change from bottom to top and set to 100% to move it below the bar */
+    border-left: 2px solid #e5dcdc;
+    height: 10px;
+    padding-left: 2px;
+    transform: translateY(0%); /* Adjust if needed to align the markers */
+}
+
+/* style.css */
+.value-inputs {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px; /* Add padding to ensure inputs do not touch the container's edges */
+}
+
+    .value-inputs input[type="text"] {
+        border: 1px solid #e5dcdc;
+        width: auto;
+        padding: 5px;
+        text-align: center;
+        max-width: 40px;
+        border-radius: 6px;
+    }
+
+    .value-inputs input.active {
+        border-color: #5daebd;
+        
+        box-shadow: 0px 0px 6px #84c5cb;
+    }
+    
+
+
+.form-group {
+    margin-bottom: 15px; /* Adjust margin as needed */
+}
+
+label {
+    display: inline-block;
+    width: 120px; /* Adjust width of the labels */
+    vertical-align: top; /* Align labels to the top */
+    margin-right: 10px; /* Adjust margin between labels and input fields */
+}
+
+.Action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.Zoom,
+.close {
+   
+    cursor: pointer;
+    background: #fff;
+    padding: 5px 10px 5px 10px;
+
+
+}
+    .Zoom:hover,
+    .close:hover {
+        border: 2px solid #fff;
+        background: #e7e7e7;
+    }
+
+
+.modal-content.full-width {
+    width: 100%;
+    
+    /*position: fixed;*/
+    transform: translate(0, -15%);
+}
+
+
+.modal-Graph.full-width {
+    width: 100%;
+    height: 100%;
+   
+
+}
+
+    
+
+
+.modal-Graph {
+    width: 600px;
+    
+}
+
+#container{
+
+    height:600px
+
+
+}
+
+/* style for graph*/
+
+.highcharts-range-selector-group {
+    font-size: 15px;
+}
+
+
+/*style for color bar */
+
+.slider-container{
+    /*//width:70% ;
+*/
+    padding:10px;
+
+    display:flex;
+
+    flex-direction:row ;  
+
+    align-items:center; 
+
+  
+
+}
+
+
+.ChangeComponent {
+    padding: 6px;
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin :2px;
+  
+}
+
+
+
+.slider-value {
+    width: 30%;
+    margin: 5px;
+    text-align-last: center;
+}
+
+.ChangeComponent:hover {
+    background-color: #dbdbdb;
+}
+
+
+#MachineName {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+#Set_Parameter{
+
+    flex-direction:row ;  
+
+}
+
+#TagNameDetail {
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.nav-item{
+
+    margin-top:10px; 
+}
+
+
+.nav-item .nav-link {
+    padding: .5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    color: #919eab;
+    font-weight: 600;
+    line-height: 2;
+    -webkit-transition: all .5s;
+    white-space: nowrap;
+    transition: all .5s;
+  
+    
+    width:90%; 
+}
+
+    .nav-item .nav-link:hover {
+        color: dodgerblue;
+    }
+    /*.nav-item .nav-link.button[class=btn-toggle]:after {
+        display: block;
+        content: "";
+        background: url(https://dash-ui-admin-template.vercel.app/_next/static/media/chevron-down.7d6f0dba.svg);
+        font-family: Feather;
+        margin-left: auto;
+        transition: .5s ease;
+        position: absolute;
+        right: 1.5rem;
+        height: 24px;
+        width: 24px;
+        filter: brightness(1) invert(0);
+        transform: scale(.8);
+    }*/
+
+    .nav-item .nav-link[data-bs-toggle=collapse]:hover::after {
+        color: dodgerblue;
+        transform: scale(1);
+    }
+
+.nav-link:focus {
+    border: 1px solid rgb(0,0,0);
+    color: dodgerblue;
+}
+
+.options {
+    display: none;
+    align-items: center;
+    color: #919eab;
+    font-weight: 600;
+    line-height: 1.8;
+    -webkit-transition: all .5s;
+    white-space: nowrap;
+    transition: all .5s;
+}
+
+/*.nav-link:focus + .options {
+    display: block;
+    max-height: 1000px;*/ /* Set a maximum height to allow for transition */
+    /*cursor :pointer; 
+
+
+}*/
+
+    .options.show {
+        margin:8px; 
+        display: block;
+        cursor: pointer;
+        background: #f5f5f5;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0px 0px 6px #84c5cb;
+    }
+
+.detail {
+    cursor: pointer;
+    color: rgb(18 50 85 / 67%);
+    border-bottom: 2px solid #fff;
+    width: auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* padding: 10px; */
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+    .detail:hover {
+        color: dodgerblue;
+        background :#FFFFFF;
+    }
+        .detail:hover + .PFCGroup {
+            color: dodgerblue;
+        }
+
+.nav-link:focus + .options li:hover {
+    display: block;
+    cursor: pointer;
+}
+
+    .nav-link:focus + .options li:focus {
+        color: dodgerblue; /* Change color of list items when hovered */
+    }
+
+.nav-item .nav-link i {
+    cursor: pointer; /* Add this line to make the icon appear clickable */
+}
+
+.HeaderOption {
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #000;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.OptionContent {
+    width: 100%; /* Make the content span the full width */
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+
+.PFCGroup {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    margin-left: 26px;
+    color: black;
+    
+}
+
+
+.ListPara {
+    display: inline-grid;
+    color: black;
+    margin-left: 30px;
+    align-items: stretch;
+    justify-items: start;
+    justify-content: start;
+    align-content: stretch;
+}
+
+#ActionSetup {
+    margin-left: 3vh;
+    margin-bottom: 1vh;
+}
+
+.containerSetup {
+    padding: 9px;
+    border: 2px solid #c9c9c9;
+    width: fit-content;
+    /* display: flex; */
+    margin-left: 11vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+}
+
+.fa-solid fa-chevron-right:focus {
+
+    color:aqua ; 
+
+}
+.fa-solid fa-chevron-left:focus {
+    color: aqua;
+}
+
+#calendar {
+   
+    align-items: center;
+   
+    position: relative;
+    margin-left: 50px;
+    z-index: 1;
+}
+
+.ButtonScale .button.active {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 11px;
+    padding :5px ;
+}
+.ButtonScale .button {
+
+    color: #a59494;
+    border: 1px solid #ebebeb;
+    border-radius: 11px;
+    padding: 5px;
+}
+
+#ButtonTimeNow .button {
+    color: #a59494;
+    border: 1px solid #ebebeb;
+    border-radius: 11px;
+    padding: 5px;
+    margin-left: 5px;
+}
+    #ButtonTimeNow .button.active {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border: 1px solid #ebebeb;
+        border-radius: 11px;
+        padding: 5px;
+    }
+
+#decreaseDate {
+    padding-top: 10px;
+    padding-left: 11px;
+    border-radius: 11px;
+    /* font-size: 16px; */
+    /* height: 33px; */
+    /* width: 29px; */
+    /* cursor: pointer; */
+    /* align-content: center; */
+    background: #f0f0f0;
+}
+    #increaseDate {
+    padding-top: 10px;
+    padding-left: 11px;
+    border-radius: 11px;
+    /* font-size: 16px; */
+    /* height: 33px; */
+    /* width: 29px; */
+    /* cursor: pointer; */
+    /* align-content: center; */
+    background: #f0f0f0;
+}
+
+
+#AjustDay {
+
+    padding :10px ;
+
+
+}
+
+
+.btn-toggle {
+    margin: 2px 5rem;
+   position: relative;
+    border: none;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+    background: #ccc;
+    transition: background-color 0.25s;
+    
+}
+
+    .btn-toggle:before, .btn-toggle:after {
+        line-height: 1.5rem;
+        width: 4rem;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        transition: opacity 1s;
+    }
+
+    .btn-toggle:before {
+        content: "Off";
+        left: -4rem;
+    }
+
+    .btn-toggle:after {
+        content: "On";
+        right: -4rem;
+        opacity: 0.5;
+    }
+
+    .btn-toggle .handle {
+        position: absolute;
+        top: 0.34rem;
+        left: 0.375rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 0.75rem;
+        background: #fff;
+        transition: left 0.5s;
+    }
+    .btn-toggle.active {
+        background-color: #29b5a8;
+    }
+
+        .btn-toggle.active .handle {
+            left: 1.5rem;
+        }
+
+        .btn-toggle.active:before {
+            opacity: 0.5;
+        }
+
+        .btn-toggle.active:after {
+            opacity: 1;
+        }
+
+
+.nav-item-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 4px solid #81acd3;
+    background: #f5f5f5;
+    border-top-right-radius: 15px;
+    border-right: 1px solid #cdcdcd;
+}
+    .nav-item-content.active {
+        color: dodgerblue;
+        border-color: #5daebd;
+        box-shadow: 0px 0px 6px #84c5cb;
+    }
+
+.MachineHeader {
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background: #f5f5f5;
+    border-bottom: 3px solid #fff;
+    color: #83a1ad;
+}
+
+    .MachineHeader:hover {
+        color: dodgerblue;
+        transform: scale(1.01);
+    }
+.MachineHeader.active {
+    color: dodgerblue;
+}
+
+
+}

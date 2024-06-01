@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action.Text" xml:space="preserve">
+    <value>Action </value>
+  </data>
+  <data name="ActiveAlarm.Text" xml:space="preserve">
+    <value>Active Alarm</value>
+  </data>
+  <data name="AlarmLevel.Text" xml:space="preserve">
+    <value>Alarm Level </value>
+  </data>
+  <data name="AlarmParameter.Text" xml:space="preserve">
+    <value>Working Time </value>
+  </data>
+  <data name="AlarmRecord.Text" xml:space="preserve">
+    <value>Alarm Record</value>
+  </data>
+  <data name="All.Text" xml:space="preserve">
+    <value>All Option</value>
+  </data>
+  <data name="Back Part Molding 01 Cold Temperature Left.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Cold Temperature Left</value>
+  </data>
+  <data name="Back Part Molding 01 Cold Temperature Right.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Cold Temperature Right</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Down.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Left Down</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Up.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Left Up</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Down.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Right Down</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Up.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Right Up</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 1.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Timer 1</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 2.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Timer 2</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 3.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Timer 3</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 4.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Timer 4</value>
+  </data>
+  <data name="Back Part Molding 03 Cold Temperature Left.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Cold Temperature Left</value>
+  </data>
+  <data name="Back Part Molding 03 Cold Temperature Right.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Cold Temperature Right</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Left Down.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Hot Temperature Left Down</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Left Up.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Hot Temperature Left Up</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Right Down.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Hot Temperature Right Down</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Right Up.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Hot Temperature Right Up</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 1.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Timer 1</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 2.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Timer 2</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 3.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Timer 3</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 4.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Timer 4</value>
+  </data>
+  <data name="Back Part Molding 03 Total Pressure.Text" xml:space="preserve">
+    <value>Back Part Molding 03 Total Pressure</value>
+  </data>
+  <data name="Back Part Molding.Text" xml:space="preserve">
+    <value>Back Part Molding</value>
+  </data>
+  <data name="Change the shoe mold.Text" xml:space="preserve">
+    <value>Change the shoe mold</value>
+  </data>
+  <data name="Comment.Text" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Commit.Text" xml:space="preserve">
+    <value>Commit</value>
+  </data>
+  <data name="Data error.Text" xml:space="preserve">
+    <value>Data error</value>
+  </data>
+  <data name="Deep Well Press 01 Left Press Time.Text" xml:space="preserve">
+    <value>Deep Well Press 01 Left Press Time</value>
+  </data>
+  <data name="Deep Well Press 01 Left Pressure.Text" xml:space="preserve">
+    <value>Deep Well Press 01 Left Pressure</value>
+  </data>
+  <data name="Deep Well Press 01 Right Press Time.Text" xml:space="preserve">
+    <value>Deep Well Press 01 Right Press Time</value>
+  </data>
+  <data name="Deep Well Press 01 Right Pressure.Text" xml:space="preserve">
+    <value>Deep Well Press 01 Right Pressure</value>
+  </data>
+  <data name="Deep Well Press.Text" xml:space="preserve">
+    <value>Deep Well Press</value>
+  </data>
+  <data name="Description.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Device error.Text" xml:space="preserve">
+    <value>Device error</value>
+  </data>
+  <data name="EndBreakTime.Text" xml:space="preserve">
+    <value>End Break Time</value>
+  </data>
+  <data name="EndDate.Text" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="Error.Text" xml:space="preserve">
+    <value>The value must be a number and cannot be empty. The Threshold level may have a logical error</value>
+  </data>
+  <data name="Error1_confirm.Text" xml:space="preserve">
+    <value>Machine maintenance</value>
+  </data>
+  <data name="Error2_confirm.Text" xml:space="preserve">
+    <value>Change the shoe mold</value>
+  </data>
+  <data name="Error3_confirm.Text" xml:space="preserve">
+    <value>Device error</value>
+  </data>
+  <data name="Error4_confirm.Text" xml:space="preserve">
+    <value>Data error</value>
+  </data>
+  <data name="Error5_confirm.Text" xml:space="preserve">
+    <value>Transmission error</value>
+  </data>
+  <data name="Error6_confirm.Text" xml:space="preserve">
+    <value>Operational error</value>
+  </data>
+  <data name="Factory.Text" xml:space="preserve">
+    <value>Factory</value>
+  </data>
+  <data name="Heat Seating Shoe Temperature.Text" xml:space="preserve">
+    <value>Heat Seating Shoe Temperature</value>
+  </data>
+  <data name="Heat Seating Shoe Time.Text" xml:space="preserve">
+    <value>Heat Seating Shoe Time</value>
+  </data>
+  <data name="Heat setting 01 Temperature.Text" xml:space="preserve">
+    <value>Heat setting Temperature</value>
+  </data>
+  <data name="Heat setting 01 Time.Text" xml:space="preserve">
+    <value>Heat setting 01 Time</value>
+  </data>
+  <data name="Heating Oven Front Shoe Temperature.Text" xml:space="preserve">
+    <value>Heating Oven Front Shoe Temperature</value>
+  </data>
+  <data name="Heating Oven Front Sole Temperature.Text" xml:space="preserve">
+    <value>Heating Oven Front Sole Temperature</value>
+  </data>
+  <data name="Heating Oven Temperature controller 1.Text" xml:space="preserve">
+    <value>Heating Oven Temperature controller 1</value>
+  </data>
+  <data name="Heating Oven Temperature controller 2.Text" xml:space="preserve">
+    <value>Heating Oven Temperature controller 2</value>
+  </data>
+  <data name="Heating Oven Temperature controller 3.Text" xml:space="preserve">
+    <value>Heating Oven Temperature controller 3</value>
+  </data>
+  <data name="Heating Oven Temperature controller 4.Text" xml:space="preserve">
+    <value>Heating Oven Temperature controller 4</value>
+  </data>
+  <data name="Heel lasting 01 Pressure.Text" xml:space="preserve">
+    <value>Heel lasting 01 Pressure</value>
+  </data>
+  <data name="Heel lasting 01 Temperature.Text" xml:space="preserve">
+    <value>Heel lasting 01 Temperature</value>
+  </data>
+  <data name="Heel lasting 01 Time.Text" xml:space="preserve">
+    <value>Heel lasting 01 Time</value>
+  </data>
+  <data name="HighOffset_Modal.Text" xml:space="preserve">
+    <value>High Alarm Level</value>
+  </data>
+  <data name="HighThreshold_Modal.Text" xml:space="preserve">
+    <value>High Warning Level</value>
+  </data>
+  <data name="ID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="language.Text" xml:space="preserve">
+    <value>en-US</value>
+  </data>
+  <data name="Level.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Line.Text" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="LowOffset_Modal.Text" xml:space="preserve">
+    <value>Low Alarm Level</value>
+  </data>
+  <data name="LowThreshold_Modal.Text" xml:space="preserve">
+    <value>Low Warning Level</value>
+  </data>
+  <data name="Machine maintenance.Text" xml:space="preserve">
+    <value>Machine maintenance</value>
+  </data>
+  <data name="Machine.Text" xml:space="preserve">
+    <value>Machine</value>
+  </data>
+  <data name="Operational error.Text" xml:space="preserve">
+    <value>Operational error</value>
+  </data>
+  <data name="PFC.Text" xml:space="preserve">
+    <value>PFC</value>
+  </data>
+  <data name="Reason.Text" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="SafeLevel.Text" xml:space="preserve">
+    <value>Safe Level</value>
+  </data>
+  <data name="SelectedData.Text" xml:space="preserve">
+    <value>Selected Data</value>
+  </data>
+  <data name="SelectedFactory.Text" xml:space="preserve">
+    <value>Selected Factory</value>
+  </data>
+  <data name="SelectedFactory.Text1" xml:space="preserve">
+    <value>Selected Factory</value>
+  </data>
+  <data name="SelectedLine.Text" xml:space="preserve">
+    <value>Selected Line </value>
+  </data>
+  <data name="SelectedMachine.Text" xml:space="preserve">
+    <value>Selected Machine</value>
+  </data>
+  <data name="SetPFC.Text" xml:space="preserve">
+    <value>PFC Parameter </value>
+  </data>
+  <data name="Standard.Text" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="StartBreakTime.Text" xml:space="preserve">
+    <value>Start Break Time</value>
+  </data>
+  <data name="StartDate.Text" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="Submit.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="TagName.Text" xml:space="preserve">
+    <value>Tag Name</value>
+  </data>
+  <data name="TimeCommit.Text" xml:space="preserve">
+    <value>Time Commit</value>
+  </data>
+  <data name="TimeEnd.Text" xml:space="preserve">
+    <value>Time End</value>
+  </data>
+  <data name="TimeStart.Text" xml:space="preserve">
+    <value>Time Start</value>
+  </data>
+  <data name="Transmission error.Text" xml:space="preserve">
+    <value>Transmission error</value>
+  </data>
+  <data name="Type.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Uncommit.Text" xml:space="preserve">
+    <value>Uncommit</value>
+  </data>
+  <data name="Value.Text" xml:space="preserve">
+    <value>Value  </value>
+  </data>
+</root>

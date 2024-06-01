@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action.Text" xml:space="preserve">
+    <value>Thao tác  </value>
+  </data>
+  <data name="ActiveAlarm.Text" xml:space="preserve">
+    <value>Cảnh báo hiện thời </value>
+  </data>
+  <data name="AlarmLevel.Text" xml:space="preserve">
+    <value>Cảnh báo </value>
+  </data>
+  <data name="AlarmParameter.Text" xml:space="preserve">
+    <value>Thời Gian Hoạt Động</value>
+  </data>
+  <data name="AlarmRecord.Text" xml:space="preserve">
+    <value>Lịch sử cảnh báo</value>
+  </data>
+  <data name="AlarmRecord.Text1" xml:space="preserve">
+    <value>Bảng giá trị cảnh báo</value>
+  </data>
+  <data name="All.Text" xml:space="preserve">
+    <value>Tất Cả</value>
+  </data>
+  <data name="Back Part Molding 01 Cold Temperature Left.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Nhiệt độ khuôn lạnh trái </value>
+  </data>
+  <data name="Back Part Molding 01 Cold Temperature Right.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Nhiệt độ khuôn lạnh phải  </value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Down.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Khuôn nóng trái  </value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Up.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Đầu bò trái </value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Up.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Đầu bò phải</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 1.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Thời gian 1</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 2.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Thời gian 2</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 3.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Thời gian 3</value>
+  </data>
+  <data name="Back Part Molding 01 Timer 4.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Thời gian 4</value>
+  </data>
+  <data name="Back Part Molding 03 Cold Temperature Left.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Nhiệt độ khuôn lạnh trái</value>
+  </data>
+  <data name="Back Part Molding 03 Cold Temperature Right.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Nhiệt độ khuôn lạnh phải </value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Left Down.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Nhiệt độ khuôn nóng trái</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Left Up.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Nhiệt độ đầu bò trái</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Right Down.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Nhiệt độ khuôn nóng phải</value>
+  </data>
+  <data name="Back Part Molding 03 Hot Temperature Right Up.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Nhiệt độ đầu bò phải</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 1.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Thời gian 1</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 2.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Thời gian 2</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 3.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Thời gian 3</value>
+  </data>
+  <data name="Back Part Molding 03 Timer 4.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Thời gian 4</value>
+  </data>
+  <data name="Back Part Molding 03 Total Pressure.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 3 - Áp lực tổng</value>
+  </data>
+  <data name="Back Part Molding.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh</value>
+  </data>
+  <data name="Change the shoe mold.Text" xml:space="preserve">
+    <value>Đổi khuôn giày</value>
+  </data>
+  <data name="Comment.Text" xml:space="preserve">
+    <value>Ghi chú </value>
+  </data>
+  <data name="Commit.Text" xml:space="preserve">
+    <value>Xác nhận </value>
+  </data>
+  <data name="Data error.Text" xml:space="preserve">
+    <value>Lỗi dữ liệu</value>
+  </data>
+  <data name="Deep Well Press 01 Left Press Time.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 1 - Thời gian áp lực trái</value>
+  </data>
+  <data name="Deep Well Press 01 Left Pressure.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 1 - Áp lực trái  </value>
+  </data>
+  <data name="Deep Well Press 01 Right Press Time.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 1 - Thời gian áp lực phải</value>
+  </data>
+  <data name="Deep Well Press 01 Right Pressure.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 1 - Áp lực phải</value>
+  </data>
+  <data name="Description.Text" xml:space="preserve">
+    <value>Tên tín hiệu </value>
+  </data>
+  <data name="Device error.Text" xml:space="preserve">
+    <value>Lỗi thiết bị</value>
+  </data>
+  <data name="EndBreakTime.Text" xml:space="preserve">
+    <value>Thời Gian Nghỉ Kết Thúc</value>
+  </data>
+  <data name="EndDate.Text" xml:space="preserve">
+    <value>Thời Gian Kết Thúc Ca</value>
+  </data>
+  <data name="Error.Text" xml:space="preserve">
+    <value>Giá trị nhập vào phải là số và không được để trống. Ngưỡng giá trị có thể bị sai </value>
+  </data>
+  <data name="Error1_confirm.Text" xml:space="preserve">
+    <value>Bảo trì máy</value>
+  </data>
+  <data name="Error2_confirm.Text" xml:space="preserve">
+    <value>Đổi khuôn giày</value>
+  </data>
+  <data name="Error3_confirm.Text" xml:space="preserve">
+    <value>Lỗi thiết bị </value>
+  </data>
+  <data name="Error4_confirm.Text" xml:space="preserve">
+    <value>Lỗi dữ liệu</value>
+  </data>
+  <data name="Error5_confirm.Text" xml:space="preserve">
+    <value>Lỗi đường truyền</value>
+  </data>
+  <data name="Error6_confirm.Text" xml:space="preserve">
+    <value>Lỗi thao tác/vận hành </value>
+  </data>
+  <data name="Factory.Text" xml:space="preserve">
+    <value>Nhà xưởng</value>
+  </data>
+  <data name="Heat Seating Shoe Temperature.Text" xml:space="preserve">
+    <value>Heat Seating Shoe Temperature</value>
+  </data>
+  <data name="Heat Seating Shoe Time.Text" xml:space="preserve">
+    <value>Heat Seating Shoe Time</value>
+  </data>
+  <data name="Heat Seating.Text" xml:space="preserve">
+    <value>Máy Hấp Mặt Giày </value>
+  </data>
+  <data name="Heat setting .Text" xml:space="preserve">
+    <value>Chưa biết  </value>
+  </data>
+  <data name="Heat setting 01 Temperature.Text" xml:space="preserve">
+    <value>Heat setting 01 Temperature</value>
+  </data>
+  <data name="Heat setting 01 Time.Text" xml:space="preserve">
+    <value>Heat setting 01 Time</value>
+  </data>
+  <data name="Heating Oven Front Shoe Temperature.Text" xml:space="preserve">
+    <value>Lò Sấy 1 - Nhiệt độ Đế </value>
+  </data>
+  <data name="Heating Oven Front Sole Temperature.Text" xml:space="preserve">
+    <value>Lò sấy 1 - Nhiệt độ Mũi  </value>
+  </data>
+  <data name="Heating Oven Machine.Text" xml:space="preserve">
+    <value>Máy Lò sấy </value>
+  </data>
+  <data name="Heating Oven Shoe Time 1.Text" xml:space="preserve">
+    <value>Lò Sấy 1 - Thời gian </value>
+  </data>
+  <data name="Heating Oven Temperature controller 1.Text" xml:space="preserve">
+    <value>Nhiệt độ lò sấy - Đồng hồ 1 </value>
+  </data>
+  <data name="Heating Oven Temperature controller 2.Text" xml:space="preserve">
+    <value>Nhiệt độ lò sấy - Đồng hồ 2</value>
+  </data>
+  <data name="Heating Oven Temperature controller 3.Text" xml:space="preserve">
+    <value>Nhiệt độ lò sấy - Đồng hồ 3</value>
+  </data>
+  <data name="Heating Oven Temperature controller 4.Text" xml:space="preserve">
+    <value>Nhiệt độ lò sấy - Đồng hồ 4</value>
+  </data>
+  <data name="Heel lasting Pressure.Text" xml:space="preserve">
+    <value>Máy ép gót - Áp lực  </value>
+  </data>
+  <data name="Heel lasting Temperature.Text" xml:space="preserve">
+    <value>Máy ép gót - Nhiệt độ  </value>
+  </data>
+  <data name="Heel lasting Time.Text" xml:space="preserve">
+    <value>Máy ép gót - Thời gian </value>
+  </data>
+  <data name="Heel lasting.Text" xml:space="preserve">
+    <value>Máy laser  </value>
+  </data>
+  <data name="HighOffset_Modal.Text" xml:space="preserve">
+    <value>Giới hạn trên</value>
+  </data>
+  <data name="HighThreshold_Modal.Text" xml:space="preserve">
+    <value>Cảnh báo trên</value>
+  </data>
+  <data name="ID.Text" xml:space="preserve">
+    <value>Số thứ tự </value>
+  </data>
+  <data name="language.Text" xml:space="preserve">
+    <value>vi-VN</value>
+  </data>
+  <data name="Level.Text" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="Line.Text" xml:space="preserve">
+    <value>Chuyền</value>
+  </data>
+  <data name="LowOffset_Modal.Text" xml:space="preserve">
+    <value>Giới hạn dưới</value>
+  </data>
+  <data name="LowThreshold_Modal.Text" xml:space="preserve">
+    <value>Cảnh báo dưới </value>
+  </data>
+  <data name="Machine maintenance.Text" xml:space="preserve">
+    <value>Bảo trì máy</value>
+  </data>
+  <data name="Machine.Text" xml:space="preserve">
+    <value>Máy Móc</value>
+  </data>
+  <data name="Operational error.Text" xml:space="preserve">
+    <value>Lỗi thao tác/vận hành</value>
+  </data>
+  <data name="PFC.Text" xml:space="preserve">
+    <value>Nhiệt độ qui định  </value>
+  </data>
+  <data name="Reason.Text" xml:space="preserve">
+    <value>Nguyên nhân</value>
+  </data>
+  <data name="SafeLevel.Text" xml:space="preserve">
+    <value>An Toàn</value>
+  </data>
+  <data name="Second.Text" xml:space="preserve">
+    <value>Giây</value>
+  </data>
+  <data name="SelectedData.Text" xml:space="preserve">
+    <value>Chọn Dữ liệu </value>
+  </data>
+  <data name="SelectedFactory.Text" xml:space="preserve">
+    <value>Chọn nhà xưởng </value>
+  </data>
+  <data name="SelectedLine.Text" xml:space="preserve">
+    <value>Chọn chuyền</value>
+  </data>
+  <data name="SelectedMachine.Text" xml:space="preserve">
+    <value>Chọn Máy Móc</value>
+  </data>
+  <data name="SetPFC.Text" xml:space="preserve">
+    <value>Cài Đặt Thông Số</value>
+  </data>
+  <data name="Standard.Text" xml:space="preserve">
+    <value>Tiêu chuẩn máy </value>
+  </data>
+  <data name="StartBreakTime.Text" xml:space="preserve">
+    <value>Thời Gian Nghỉ Bắt Đầu</value>
+  </data>
+  <data name="StartDate.Text" xml:space="preserve">
+    <value>Thời Gian Bắt Đầu Ca</value>
+  </data>
+  <data name="Submit.Text" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="TagName.Text" xml:space="preserve">
+    <value>Kiểu dữ liệu </value>
+  </data>
+  <data name="TimeCommit.Text" xml:space="preserve">
+    <value>Thời Gian Xác nhận</value>
+  </data>
+  <data name="TimeEnd.Text" xml:space="preserve">
+    <value>Thời gian kết thúc  </value>
+  </data>
+  <data name="TimeStart.Text" xml:space="preserve">
+    <value>Thời gian bắt dầu </value>
+  </data>
+  <data name="Transmission error.Text" xml:space="preserve">
+    <value>Lỗi đường truyền</value>
+  </data>
+  <data name="Type.Text" xml:space="preserve">
+    <value>Mức Độ</value>
+  </data>
+  <data name="Uncommit.Text" xml:space="preserve">
+    <value>Chưa Xác Nhận</value>
+  </data>
+  <data name="Value.Text" xml:space="preserve">
+    <value>Giá trị </value>
+  </data>
+</root>

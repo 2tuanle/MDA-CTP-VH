@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Default.aspx" title="Home" description="Home Page">
+    
+      <siteMapNode url="~/HistoryData.aspx" title="Lịch Sử" description="Product Details">
+      </siteMapNode>
+       <siteMapNode url="~/Contact.aspx" title="Cảnh Báo" description="About Page">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

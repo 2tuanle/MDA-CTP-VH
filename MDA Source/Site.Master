@@ -1,0 +1,192 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MDA_CTP.SiteMaster" %>
+
+<!DOCTYPE html>
+
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - MDA CTP Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link rel="stylesheet" href="../Dist/Style_Master.css">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Add the following line to include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+    
+</head>
+<body>
+    <form runat="server">
+
+
+        <asp:HiddenField runat="server" ID="selectedLanguage" ClientIDMode="Static" />
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container" style="height: 4vh; width: 100%;">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="HistoryData">
+                        <img src="../Image/Chingluh.png" alt="Logo" class="logo-img" style="width: 79px; height: 45px;">
+                    </a>
+                    <span class="navbar-text" style="font-size :15px; color: white;">
+                        <asp:Literal runat="server" Text="<%$ Resources:Resource , title%>" />
+                    </span>
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        
+
+                    </button>
+
+                </div>
+
+
+                <div class="navbar-collapse collapse" style="font-size: 16px">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="#" onclick="Redirect('/HistoryData'); return false;"><i class="fas fa-home"></i>
+                            <asp:Literal runat="server" Text="<%$ Resources:Resource , Home%>" /></a>
+                        </li>
+                        <li><a runat="server" href="#" onclick="Redirect('/Alarm'); return false;"><i class="fas fa-envelope"></i>
+                            <asp:Literal runat="server" Text="<%$ Resources:Resource , Alarm%>" /></a></li>
+                        <asp:ScriptManager runat="server">
+                            <Scripts>
+                                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                                <%--Framework Scripts--%>
+                                <asp:ScriptReference Name="MsAjaxBundle" />
+                                <asp:ScriptReference Name="jquery" />
+                                <asp:ScriptReference Name="bootstrap" />
+                                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                                <asp:ScriptReference Name="WebFormsBundle" />
+                                <%--Site Scripts--%>
+                            </Scripts>
+                        </asp:ScriptManager>
+
+                    </ul>
+
+                    <div class="navbar1">
+
+                        <div class="subnav1" onclick="toggleSubnavContent()">
+                            <a class="subnavbtn1">
+                                <asp:Literal runat="server" Text="<%$ Resources:Resource, Languages %>" />
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <div class="subnav1-content">
+                                <asp:LinkButton runat="server" OnClientClick="changeLanguage('vi-VN'); return false;">Tiếng việt</asp:LinkButton>
+                                <asp:LinkButton runat="server" OnClientClick="changeLanguage('en-US'); return false;">English</asp:LinkButton>
+                                <asp:LinkButton runat="server" OnClientClick="changeLanguage('zh-CN'); return false;">中文</asp:LinkButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+
+        </div>
+
+    </form>
+
+
+
+</body>
+</html>
+
+
+
+
+<script>
+
+    var languagescodeStored = '?lang=en-US';
+
+    // Function to change the language
+    function changeLanguage(languageCode) {
+        // Update the language code
+        languagescodeStored = '?lang=' + languageCode;
+
+        // Redirect to the current page with the selected language code
+        var currentUrl = window.location.href.split('?')[0]; // Remove existing query string
+        var newUrl = currentUrl + languagescodeStored;
+        window.location.href = newUrl;
+    }
+
+    function Redirect(PageName) {
+       
+
+        window.location.href = PageName + '?lang=' + ((window.location.href.split('?lang=')[1] == undefined)
+            ? 'en-US' : window.location.href.split('?lang=')[1]);
+    }
+
+  
+
+    function generateUniqueId() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+   
+
+    $(document).ready(function () {
+        var uniqueId = sessionStorage.getItem('IdUser');
+        if (!uniqueId) {
+            // If not found, generate a new unique ID
+            uniqueId = generateUniqueId();
+            // Store the IdUser in sessionStorage
+            sessionStorage.setItem('IdUser', uniqueId);
+            // Stimulate Line, location , Factory of QC
+            sessionStorage.setItem('_LineResponsibility', "1");  
+            sessionStorage.setItem('_LocationResponsibility', "S2");
+            sessionStorage.setItem('_FactoryResponsibility', "VH");
+        }
+
+        // Detect browser/tab close event
+        window.addEventListener('beforeunload', function () {
+            $.ajax({
+                type: "POST",
+                url: "Master.aspx/ClearSession",
+                data: JSON.stringify({ uniqueId: uniqueId }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    sessionStorage.removeItem('IdUser')
+                    
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+
+
+</script>
