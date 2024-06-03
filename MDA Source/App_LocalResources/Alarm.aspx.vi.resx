@@ -241,7 +241,7 @@
     <value>Giá trị nhập vào phải là số và không được để trống. Ngưỡng giá trị có thể bị sai </value>
   </data>
   <data name="Error1_confirm.Text" xml:space="preserve">
-    <value>Bảo trì máy</value>
+    <value>Lỗi máy</value>
   </data>
   <data name="Error2_confirm.Text" xml:space="preserve">
     <value>Đổi khuôn giày</value>
@@ -339,8 +339,8 @@
   <data name="LowThreshold_Modal.Text" xml:space="preserve">
     <value>Cảnh báo dưới </value>
   </data>
-  <data name="Machine maintenance.Text" xml:space="preserve">
-    <value>Bảo trì máy</value>
+  <data name="Machine error.Text" xml:space="preserve">
+    <value>Lỗi máy</value>
   </data>
   <data name="Machine.Text" xml:space="preserve">
     <value>Máy Móc</value>

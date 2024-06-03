@@ -181,13 +181,13 @@
                             <div class="form-group">
                                 <label for="dropdown_Modal"><strong><asp:Label runat="server" Text="Reason" meta:resourceKey="Reason"></asp:Label></strong></label>
                                 <select id="dropdown_Modal" class="form-control">
-                                    <option value="Machine maintenance">
+                                    <option value="Machine error">
                                         <asp:Label runat="server" Text="Error1_confirm" meta:resourceKey="Error1_confirm"></asp:Label>
                                     </option>
                                     <option value="Change the shoe mold">
                                         <asp:Label runat="server" Text="Error2_confirm" meta:resourceKey="Error2_confirm"></asp:Label></option>
-                                    <option value="Device error">
-                                        <asp:Label runat="server" Text="Error3_confirm" meta:resourceKey="Error3_confirm"></asp:Label></option>
+                                    <option value="Data error">
+                                        <asp:Label runat="server" Text="Error4_confirm" meta:resourceKey="Error4_confirm"></asp:Label></option>
                        
                                     <option value="Operational error">
                                         <asp:Label runat="server" Text="Error6_confirm" meta:resourceKey="Error6_confirm"></asp:Label></option>
@@ -362,13 +362,13 @@
                             <option value="" selected >
                                 <asp:Label runat="server" Text="All" meta:resourceKey="All"></asp:Label>
                             </option>
-                            <option value="Machine maintenance">
+                            <option value="Machine error">
                                 <asp:Label runat="server" Text="Error1_confirm" meta:resourceKey="Error1_confirm"></asp:Label>
                             </option>
                             <option value="Change the shoe mold">
                                 <asp:Label runat="server" Text="Error2_confirm" meta:resourceKey="Error2_confirm"></asp:Label></option>
-                            <option value="Device error">
-                                <asp:Label runat="server" Text="Error3_confirm" meta:resourceKey="Error3_confirm"></asp:Label></option>
+                            <option value="Data error">
+                                <asp:Label runat="server" Text="Error4_confirm" meta:resourceKey="Error4_confirm"></asp:Label></option>
                             <option value="Operational error">
                                 <asp:Label runat="server" Text="Error6_confirm" meta:resourceKey="Error6_confirm"></asp:Label></option>
                         </select>
@@ -866,7 +866,9 @@
                     document.getElementById('Line_Modal').textContent = item.Line;
                     var dropdown = document.getElementById('dropdown_Modal');
                     for (var i = 0; i < dropdown.options.length; i++) {
+                        
                         if (dropdown.options[i].value === item.Reason) {
+                            
                             dropdown.selectedIndex = i;
                             break;
                         }

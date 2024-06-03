@@ -244,7 +244,7 @@
     <value>The value must be a number and cannot be empty. The Threshold level may have a logical error</value>
   </data>
   <data name="Error1_confirm.Text" xml:space="preserve">
-    <value>Machine maintenance</value>
+    <value>Machine error</value>
   </data>
   <data name="Error2_confirm.Text" xml:space="preserve">
     <value>Change the shoe mold</value>
@@ -327,8 +327,8 @@
   <data name="LowThreshold_Modal.Text" xml:space="preserve">
     <value>Low Warning Level</value>
   </data>
-  <data name="Machine maintenance.Text" xml:space="preserve">
-    <value>Machine maintenance</value>
+  <data name="Machine error.Text" xml:space="preserve">
+    <value>Machine error</value>
   </data>
   <data name="Machine.Text" xml:space="preserve">
     <value>Machine</value>

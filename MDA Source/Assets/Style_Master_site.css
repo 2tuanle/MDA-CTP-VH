@@ -1,0 +1,38 @@
+﻿
+.nav li {
+    border-style: none; /* Add a border to each <li> element */
+    margin-right: 1px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-right: 1px;
+    margin-left: 1px;
+    height: auto;
+    width: auto;
+}
+
+.navbar-inverse {
+    background-color: #000839;
+}
+
+.navbar-brand {
+    
+    height: 50px;
+    padding: 1px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+}
+
+
+
