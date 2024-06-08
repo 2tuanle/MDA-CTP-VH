@@ -1,15 +1,19 @@
-﻿
-<%@ Page Title="HistoryData" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HistoryData.aspx.cs" Inherits="MDA_CTP.HistoryData"   %>
+﻿<%@ Page Title="HistoryData" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HistoryData.aspx.cs" Inherits="MDA_CTP.HistoryData" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   
-    <!-- Function - Search -->
- 
 
-<script src="https://kit.fontawesome.com/2767141d82.js" crossorigin="anonymous"></script>
+    <!-- Function - Search -->
+
+
+    <script src="https://kit.fontawesome.com/2767141d82.js" crossorigin="anonymous"></script>
     <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .highcharts-range-selector-group {
+                display: none !important;
+            }
+        </style>
+    </head>
 
 
     <div>
@@ -186,15 +190,21 @@
 
         </ul>
     </div>
-
-
-
+    <asp:HiddenField ID="languageField" runat="server" />
 
     <!--</div>-->
     <div class="Garph-decord">
+        <!-- Tag  to show out the numbers -->
+        <div class="value-inputs" style="display:none;">
+            <input type="text" value="20" id="LowOffset_Modal" readonly />
+            <input type="text" value="30" id="LowThreshold_Modal" readonly/>
+            <input type="text" value="60" id="HighThreshold_Modal" readonly/>
+            <input type="text" value="80" id="HighOffset_Modal" readonly/>
+        </div>
 
 
-
+        
+                    <asp:HiddenField ID="StoredID_Database" runat="server" />
 
         <!-- Highcharts container -->
         <figure class="highcharts-figure">
@@ -211,18 +221,26 @@
     <div id="dataContainer"></div>
 
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <%--    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/boost.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>--%>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+<%--    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/stock.js"></script>--%>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="../Dist/virtual-select.min.css">
     <link href="Dist/Style_History.css" rel="stylesheet" />
@@ -233,8 +251,25 @@
 
     <!-- Script for Set and Update Multiple Drop List Data  -->
 
-    <script>
+    <script> 
+        window.addEventListener("load", function () {
+            var now = new Date();
+            var utcString = now.toISOString().substring(0, 19);
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var StartDatetime = year + "-" +
+                (month < 10 ? "0" + month.toString() : month) + "-" +
+                (day < 10 ? "0" + day.toString() : day) + "T06:30:00";
+            var EndDatetime = year + "-" +
+                (month < 10 ? "0" + month.toString() : month) + "-" +
+                (day < 10 ? "0" + day.toString() : day) + "T17:00:00";
+            var StartDateField = $('#StartTime');
+            StartDateField.attr("value", StartDatetime);
+            var EndDateField = $('#EndTime');
+            EndDateField.attr("value", EndDatetime);
 
+        });
         $(document).ready(function () {
 
             var isMultiple2Initialized = false; // Flag to track initialization
@@ -245,12 +280,19 @@
 
             var Placeholder_Data = document.getElementById('<%= Placeholder_Data_text.ClientID %>').value;
 
-            // Function to populate options in 'Multiple1' dropdown
 
+
+            $('#StartTime').click(clickOnBackbutton);
+
+            function clickOnBackbutton() {
+
+                console.log('back to menu'); //function not called 
+
+            }
             function VirtualSelect_Init(Name_key) {
 
                 VirtualSelect.init({
-                    ele: "#"+Name_key,
+                    ele: "#" + Name_key,
                     multiple: true,
                     placeholder: (Name_key == "Multiple1") ? Placeholder_Machine : Placeholder_Data
                 });
@@ -277,11 +319,11 @@
 
 
             // Initial population of 'Multiple1' dropdown on document ready
-           
+
             VirtualSelect_Init("Multiple1");  // Init Multiple 1 
             VirtualSelect_Init("Multiple2");  // Init Multiple 2 
-         
-         
+
+
             var Data_TagName_Receive = document.getElementById('<%= Data_TagName_Receive.ClientID %>').value; // Get Tag Name From C# //  
             var Data_TagName_Populate = JSON.parse(Data_TagName_Receive);
             Data_TagName_Populate = Data_TagName_Populate.map(item => ({ label: item.Label, value: item.Value }));
@@ -300,7 +342,7 @@
                 var Data_TagName = $('#Input-Multiple1').val();
                 var Data_Factory = document.getElementById('<%= DropDownList1.ClientID %>').value;
                 var Data_Line = document.getElementById('<%= DropDownList2.ClientID %>').value;
-               
+
                 // call Ajax back to C# //   
                 $.ajax({
                     type: "POST",
@@ -343,7 +385,7 @@
         });
 
     </script>
- 
+
     <!-- Fucntion to load and process chart -->
 
     <script>
@@ -352,7 +394,7 @@
         var TimeCycle_Min = 0;
         var previous = 0;
         var Last_Mode = null;
-        var chart = Highcharts.chart('container', {
+        var chart = Highcharts.stockChart('container', {
 
             exporting: {
 
@@ -393,6 +435,7 @@
                 zoomType: 'x',
                 panning: true,
                 panKey: 'shift',
+                    height: 500,
                 resetZoomButton: {
                     theme: {
                         style: {
@@ -422,12 +465,12 @@
                         fontSize: '25px'
                     }
                 },
-                scrollbars : true
+                scrollbars: true
 
             },
             yAxis: {
                 title: {
-                   
+
                     style: {
                         fontSize: '16px'
                     }
@@ -436,7 +479,7 @@
             series: [{
                 data: [],
                 lineWidth: 0.5,
-                
+
                 connectNulls: false
 
             }],
@@ -513,9 +556,9 @@
             },
             yAxis: {
                 min: 0,
-                
 
-               
+
+
             },
             tooltip: {
                 formatter: function () {
@@ -545,7 +588,7 @@
         };
         var _Data_Receive = [];
         var _SubData_Receive = [];
-        var icon_last = 0;
+        var icon_last = 0;  
         var splitCharts = [];
         var splitContainers = []; // Declare and initialize the splitContainers array
         var chartOptions = 0;
@@ -555,7 +598,7 @@
 
         function Make_Send_Text(KeyMode) {
 
-            if (KeyMode == "Average") {  
+            if (KeyMode == "Average") {
                 flagcheck = false;
                 if ($('#DropDownList8').val() == "") {
 
@@ -569,7 +612,6 @@
 
             var [Date_start, time_start] = startTime.split('T');
             var [Date_end, time_end] = endTime.split('T');
-
             var dateStart = Date_start + " " + time_start + ":00";
             var dateEnd = Date_end + " " + time_end + ":00";
 
@@ -587,9 +629,13 @@
             );
         }
 
-        function createChart(containerId, seriesName, data,  Unit) {
+
+       
+        function createChart(containerId, seriesName, data, Unit) {  
+
             const signalOptions = {
-                chart: {
+                chart: { 
+                   height: 500,
                     type: 'line',
                     renderTo: containerId,
                 },
@@ -607,15 +653,15 @@
                             fontWeight: 'bold'
                         }
                     }
-   
+
                 }
 
             };
 
-            return new Highcharts.Chart(signalOptions);
+            return new Highcharts.stockChart(signalOptions);
         }
 
-        function processDataForDownload( intervalStartArray, averageArray, TagDesc) {
+        function processDataForDownload(intervalStartArray, averageArray, TagDesc) {
             function formatDate(date) {
                 const options = {
                     year: 'numeric',
@@ -641,12 +687,12 @@
 
         function processChildChart(data) {
             const Data_Receive = processChartData(data);
-            Data_download = [];  
+            Data_download = [];
             const container = document.getElementById('container');
             container.style.overflow = ''; // Remove the 'hidden' value
             container.innerHTML = '';
 
-            
+
             let Chart_index = 0;
             for (const [tagName, dataList] of Object.entries(Data_Receive)) {
                 const containerId = `container${Chart_index++}`;
@@ -659,25 +705,94 @@
                 const Unit = lastEntry[0][1]; // Accessing the second element of the last entry
                 const TypeData = lastEntry[0][2];
 
-                var titleChart = TypeData + " - " + Unit; 
+                var titleChart = TypeData + " - " + Unit;
 
                 const mapDataProperty = prop => dataList.map(item => item[prop]);
                 const intervalStartArray = mapDataProperty('IntervalStart').map(date => new Date(date).getTime());
                 const averageArray = mapDataProperty('Average').map(parseFloat);
-               /* const TagDesc = mapDataProperty('TagDesc');*/
+                /* const TagDesc = mapDataProperty('TagDesc');*/
                 const data_chart = intervalStartArray.map((timestamp, index) => [timestamp, averageArray[index]]);
-             
+
 
                 const splitChart = createChart(containerId, TagDesc, data_chart, titleChart);
                 splitChart.update(Update_Chart_Option);
-                splitCharts.push(splitChart);
+                //////////////////////////////create line chart/////////////////////////////////////////////////////
+                //UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart);
+                //UpdateChart('LowThreshold_Modal', 'Green', 'triangle-down', splitChart);
+                //UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart);
+                //UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart);
+                //////////////////////////////create line chart/////////////////////////////////////////////////////
 
-                processDataForDownload( intervalStartArray, averageArray, TagDesc);
+                splitCharts.push(splitChart); 
+               
+
+                processDataForDownload(intervalStartArray, averageArray, TagDesc);
             }
-            
+
             chart.redraw();
         }
+        //////////////////////////////create line chart/////////////////////////////////////////////////////
 
+        function UpdateChart(KeyLine, color, shape, chart) {
+            // Get the new y-value as a number
+            var newYValue = parseFloat(document.getElementById(KeyLine).value);
+            var language = document.getElementById('<%= languageField.ClientID %>').value;
+
+            var labelForLevel = JSON.parse(language);
+
+            if (KeyLine == 'HighOffset_Modal')
+                KeyLine = labelForLevel.Active_HighOffset;
+            else if (KeyLine == 'LowOffset_Modal')
+                KeyLine = labelForLevel.Active_LowOffset;
+            else if (KeyLine == 'HighThreshold_Modal')
+                KeyLine = labelForLevel.PFC_High;
+            else if (KeyLine == 'LowThreshold_Modal')
+                KeyLine = labelForLevel.PFC_Low;
+
+            UpdateConstantLine(newYValue, KeyLine, color, shape, chart); // draw line level in chart  
+            if (KeyLine == 'HighThreshold_Modal')
+                document.getElementById('HighOffset_Modal').onchange();
+            if (KeyLine == 'LowThreshold_Modal')
+                document.getElementById('LowOffset_Modal').onchange();
+
+        }
+        function UpdateConstantLine(newYValue, lineName, color, shape, chart) {
+            // Find the series representing the constant line by name
+            var constantLineSeries = chart.series.find(series => series.name === lineName);
+
+            if (constantLineSeries) {
+                // Update the data point of the constant line with the new y-value
+                constantLineSeries.setData([[constantLineSeries.data[0].x, newYValue], [constantLineSeries.data[1].x, newYValue]]);
+                constantLineSeries.update({ name: lineName }); // Update the name of the constant line
+            } else {
+                // Series not found, add a new constant line
+                var xAxis = chart.xAxis[0];
+                var minX = xAxis.dataMin;
+                var maxX = xAxis.dataMax;
+
+                // Add a new series with a horizontal line at the new y-value spanning the x-axis range
+                var constantSeriesOptions = {
+                    name: lineName,
+                    type: 'line',
+                    data: [[minX, newYValue], [maxX, newYValue]],
+                    lineWidth: 1,
+                    color: color,
+                    marker: {
+                        symbol: shape,
+
+                        lineWidth: 2
+                    }
+                };
+
+                chart.addSeries(constantSeriesOptions);
+                chart.update(Update_Chart_Option);
+
+
+            }
+
+            chart.redraw();
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         function removeDuplicates(arr, prop) {
             const unique = {};
             const result = [];
@@ -700,7 +815,7 @@
 
         function Get_data_chunk(chunkData) {
             // push data to each label data //  
-           
+
             for (let tag in chunkData) {
                 let obj = {};
                 obj[tag] = chunkData[tag];
@@ -753,8 +868,8 @@
                     graphSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
 
-                var Data_send_Average = Make_Send_Text("average"); 
-                  
+                var Data_send_Average = Make_Send_Text("average");
+
                 $.ajax({
                     type: "POST",
                     url: "HistoryData.aspx/Load_Data_Average",
@@ -764,22 +879,22 @@
                     success: function (Data_Receive) {
                         var chunkData = JSON.parse(Data_Receive.d);
 
-                        
+
                         function isObjectEmpty(obj) {
                             return Object.keys(obj).length === 0 && obj.constructor === Object;
                         }
-                        
+
                         if (!isObjectEmpty(chunkData)) {
                             index_submit++; // Increment index
-                            Get_data_chunk(chunkData);  
+                            Get_data_chunk(chunkData);
                             submitForm_detail();
                         }
                         else {
-                           console.log(_Data_Receive);
-                            processChildChart(_Data_Receive);  
+                            console.log(_Data_Receive);
+                            processChildChart(_Data_Receive);
                             hideLoadingIcon(icon_last);
                             resolve();
-                            
+
 
                         }
                     },
@@ -790,15 +905,15 @@
                 });
             });
 
-            
+
         }
 
 
         async function Submit_RealTime_Detail() {
             return new Promise(function (resolve, reject) {
-                
+
                 var Data_send_Realtime = Make_Send_Text("RealTime");
-                
+
                 //console.log(datasend_TagDesc);
                 $.ajax({
                     type: "POST",
@@ -806,14 +921,14 @@
                     data: JSON.stringify({ values: Data_send_Realtime, chunkIndex: index_submit }),
                     contentType: "application/json; charset=UTF-8",
                     dataType: "json",
-                    success: function (Data_Receive) {                       
+                    success: function (Data_Receive) {
                         var chunkData = JSON.parse(Data_Receive.d);
                         function isObjectEmpty(obj) {
                             return Object.keys(obj).length === 0 && obj.constructor === Object;
                         }
-                        if (!isObjectEmpty(chunkData)) {                          
+                        if (!isObjectEmpty(chunkData)) {
                             index_submit++; // Increment index
-                            Get_data_chunk(chunkData);                          
+                            Get_data_chunk(chunkData);
                             Submit_RealTime_Detail();
                         }
                         else {
@@ -835,9 +950,9 @@
 
         // get  the real time data
         async function downloadExcel() {
-           
+
             try {
-               
+
                 if (Last_Mode == 'homeItem') {
 
                     var newinterEnd = [];
@@ -857,8 +972,8 @@
                             // Store the formatted date string in the newinterEnd array
                             newinterEnd.push({ endaTime: formatDate(originalDateTime) });
                         } else {
-                           
-                          
+
+
                             newinterEnd.push(null); // For example, push null for an invalid date
                         }
                     }
@@ -874,7 +989,7 @@
                         return date.toLocaleDateString('en-US', options);
                     }
 
-                   
+
                     var IntervalEndArray = [];
                     for (var i = 0; i < newinterEnd.length; i++) {
                         var [datePart, timePart] = newinterEnd[i].endaTime.split(", ");
@@ -893,7 +1008,7 @@
                     var worksheet = XLSX.utils.aoa_to_sheet([['Tag Desc', 'Interval Start', 'Interval End', 'Average']].concat(dataForSheet));
                 }
                 else {
-                   
+
                     //await Submit_RealTime_Detail(0);
                     var workbook = XLSX.utils.book_new();
                     var dataForSheet = Data_download.map(item => [item.TagDesc, item.intervalStart, item.average]);
@@ -967,7 +1082,7 @@
                 LoadingIcon('realtime');
             }
 
-            
+
             // Load data into chart   
             _Data_Receive = [];
             index_submit = 0;
@@ -994,11 +1109,11 @@
             }
         }
 
-    
+
 
     </script>
 
 
-    
+
 
 </asp:Content>

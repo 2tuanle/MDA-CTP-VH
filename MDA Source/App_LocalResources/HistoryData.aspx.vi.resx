@@ -330,8 +330,20 @@
   <data name="Heel lasting.Text" xml:space="preserve">
     <value>Máy Ép Gót</value>
   </data>
+  <data name="HighOffset_Modal.Text" xml:space="preserve">
+    <value>Giới hạn trên</value>
+  </data>
+  <data name="HighThreshold_Modal.Text" xml:space="preserve">
+    <value>Cảnh báo trên</value>
+  </data>
   <data name="Line.Text" xml:space="preserve">
     <value>Chuyền</value>
+  </data>
+  <data name="LowOffset_Modal.Text" xml:space="preserve">
+    <value>Giới hạn dưới</value>
+  </data>
+  <data name="LowThreshold_Modal.Text" xml:space="preserve">
+    <value>Cảnh báo dưới</value>
   </data>
   <data name="Machine.Text" xml:space="preserve">
     <value>Máy Móc</value>

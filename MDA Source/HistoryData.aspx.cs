@@ -8,6 +8,8 @@ using System.Web.Script.Services;
 using System.Diagnostics;
 using System.Globalization;
 using System;
+using static MDA_CTP.Alarm;
+using Newtonsoft.Json;
 
 
 namespace MDA_CTP
@@ -32,7 +34,17 @@ namespace MDA_CTP
         public static bool flag_track = false;
         public static int previous_startindex = 0;
         public static int offset_index = 0;
-        
+        // class Stored Lable for Level in Chart  Alarm
+        public class RowData
+        {
+            public string TagDesc { get; set; }
+            public string PFC_High { get; set; }
+            public string PFC_Low { get; set; }
+            public string Active_HighOffset { get; set; }
+            public string Active_LowOffset { get; set; }
+        }
+
+
 
         // Session languages //  
 
@@ -79,8 +91,18 @@ namespace MDA_CTP
                 DropDownList1.Items.Insert(0, new ListItem(localizedText, ""));
                 DropDownList2.Items.Insert(0, new ListItem(localizedLine, ""));
                 Placeholder_Machine_text.Value = localizedMachine;
-                Placeholder_Data_text.Value= localizedData;
+                Placeholder_Data_text.Value= localizedData; 
 
+
+
+                RowData LableForLevel = new RowData();
+                LableForLevel.PFC_High = GetLocalResourceObject("HighThreshold_Modal.Text") as string;
+                LableForLevel.PFC_Low = GetLocalResourceObject("LowThreshold_Modal.Text") as string;
+                LableForLevel.Active_HighOffset = GetLocalResourceObject("HighOffset_Modal.Text") as string;
+                LableForLevel.Active_LowOffset = GetLocalResourceObject("LowOffset_Modal.Text") as string;
+
+                string jsonData = JsonConvert.SerializeObject(LableForLevel);
+                languageField.Value = jsonData;
                 base.InitializeCulture();
       
               

@@ -333,8 +333,20 @@
   <data name="Heel Lasting.Text" xml:space="preserve">
     <value>Heel lasting</value>
   </data>
+  <data name="HighOffset_Modal.Text" xml:space="preserve">
+    <value>High Alarm Level</value>
+  </data>
+  <data name="HighThreshold_Modal.Text" xml:space="preserve">
+    <value>High Warning Level</value>
+  </data>
   <data name="Line.Text" xml:space="preserve">
     <value>Line</value>
+  </data>
+  <data name="LowOffset_Modal.Text" xml:space="preserve">
+    <value>Low Alarm Level</value>
+  </data>
+  <data name="LowThreshold_Modal.Text" xml:space="preserve">
+    <value>Low Warning Level</value>
   </data>
   <data name="Machine.Text" xml:space="preserve">
     <value>Machine</value>
