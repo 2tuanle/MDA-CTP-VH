@@ -8,8 +8,10 @@ using System.Web.Script.Services;
 using System.Diagnostics;
 using System.Globalization;
 using System;
-using static MDA_CTP.Alarm;
+using static MDA_CTP.Alarm; 
 using Newtonsoft.Json;
+using System.Data;
+using System.Web;
 
 
 namespace MDA_CTP
@@ -377,6 +379,20 @@ namespace MDA_CTP
             //System.Diagnostics.Debug.WriteLine("RunTime " + ts);
            
             return sortedResultChunksJson;
+        }
+
+
+        [WebMethod]
+        public static string Load_Data_PFC(string tagName)
+        {
+            var dv = new DropDownListHandler(connectionString).PFCTableSelectAll(tagName).DefaultView;
+            var result = "";
+
+            if (dv.Count > 0)
+            {
+                result =  dv[0]["PFC_High"].ToString() + "," + dv[0]["PFC_Low"].ToString() + "," + dv[0]["Active_HighOffset"].ToString() + "," + dv[0]["Active_LowOffset"].ToString();
+            }   
+            return result;
         }
 
     }

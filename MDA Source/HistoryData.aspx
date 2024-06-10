@@ -195,16 +195,16 @@
     <!--</div>-->
     <div class="Garph-decord">
         <!-- Tag  to show out the numbers -->
-        <div class="value-inputs" style="display:none;">
-            <input type="text" value="20" id="LowOffset_Modal" readonly />
-            <input type="text" value="30" id="LowThreshold_Modal" readonly/>
-            <input type="text" value="60" id="HighThreshold_Modal" readonly/>
-            <input type="text" value="80" id="HighOffset_Modal" readonly/>
+        <div class="value-inputs" style="display: none;">
+            <input type="text" id="LowOffset_Modal" readonly />
+            <input type="text" id="LowThreshold_Modal" readonly />
+            <input type="text" id="HighThreshold_Modal" readonly />
+            <input type="text" id="HighOffset_Modal" readonly />
         </div>
 
 
-        
-                    <asp:HiddenField ID="StoredID_Database" runat="server" />
+
+        <asp:HiddenField ID="StoredID_Database" runat="server" />
 
         <!-- Highcharts container -->
         <figure class="highcharts-figure">
@@ -228,7 +228,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<%--    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <%--    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -236,9 +236,9 @@
     <script src="https://code.highcharts.com/modules/stock.js"></script>--%>
 
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
-<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
@@ -429,13 +429,16 @@
                 }
             },
 
+            navigator: {
+                enabled: false
+            },
             chart: {
                 type: 'line',
                 animation: Highcharts.svg,
                 zoomType: 'x',
                 panning: true,
                 panKey: 'shift',
-                    height: 500,
+                height: 800,
                 resetZoomButton: {
                     theme: {
                         style: {
@@ -533,6 +536,9 @@
                     align: 'left'
                 }
             },
+            navigator: {
+                enabled: false
+            },
             xAxis: {
                 type: 'datetime',
                 labels: {
@@ -581,14 +587,14 @@
 
                 itemStyle: {
                     fontFamily: 'Arial',
-                    fontSize: '14px',
+                    fontSize: '16px',
                     color: 'blue'
                 }
             }
         };
         var _Data_Receive = [];
         var _SubData_Receive = [];
-        var icon_last = 0;  
+        var icon_last = 0;
         var splitCharts = [];
         var splitContainers = []; // Declare and initialize the splitContainers array
         var chartOptions = 0;
@@ -630,29 +636,29 @@
         }
 
 
-       
-        function createChart(containerId, seriesName, data, Unit) {  
+
+        function createChart(containerId, seriesName, data, Unit) {
 
             const signalOptions = {
-                chart: { 
-                   height: 500,
+                chart: {
+                    height: 450,
                     type: 'line',
                     renderTo: containerId,
                 },
                 series: [{
-                    lineWidth: 0.5,
+                    lineWidth: 0.9,
                     name: seriesName,
                     data: data,
                     connectNulls: false,
                 }],
-                yAxis: {
+                yAxis: { 
                     title: {
                         text: Unit,
                         style: {
                             fontSize: '13px',
                             fontWeight: 'bold'
                         }
-                    }
+                    } 
 
                 }
 
@@ -685,7 +691,7 @@
             }
         }
 
-        function processChildChart(data) {
+         function processChildChart(data) {
             const Data_Receive = processChartData(data);
             Data_download = [];
             const container = document.getElementById('container');
@@ -712,19 +718,45 @@
                 const averageArray = mapDataProperty('Average').map(parseFloat);
                 /* const TagDesc = mapDataProperty('TagDesc');*/
                 const data_chart = intervalStartArray.map((timestamp, index) => [timestamp, averageArray[index]]);
+                var HighThreshold_Modal =0;
+                var LowThreshold_Modal = 0;
+                var HighOffset_Modal = 0;
+                var LowOffset_Modal = 0; 
+                $.ajax({
 
+                    type: "POST", 
+                    url: "HistoryData.aspx/Load_Data_PFC", 
+                    data: "{'tagName': '" + tagName + "'}", 
+                    contentType: "application/json; charset=utf-8", 
+                    dataType: "json",  
+                    cache: false, 
+                    async: false,
+                    success: function (msg) {
+                        console.log(msg);
+                        var arr = jQuery.makeArray(msg.d.split(','));
+                        HighThreshold_Modal = arr[0];
+                        LowThreshold_Modal = arr[1];
+                        HighOffset_Modal = parseFloat(arr[0]) + parseFloat(arr[2]);
+                        LowOffset_Modal = parseFloat(arr[1]) - parseFloat(arr[3]);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log('Error in Operation');
+                    }
+                });
+
+                ////////////////////////////////////////////// 
 
                 const splitChart = createChart(containerId, TagDesc, data_chart, titleChart);
                 splitChart.update(Update_Chart_Option);
                 //////////////////////////////create line chart/////////////////////////////////////////////////////
-                //UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart);
-                //UpdateChart('LowThreshold_Modal', 'Green', 'triangle-down', splitChart);
-                //UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart);
-                //UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart);
+                UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart, HighThreshold_Modal);
+                UpdateChart('LowThreshold_Modal', 'Green', 'triangle-down', splitChart, LowThreshold_Modal);
+                UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart, HighOffset_Modal);
+                UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart, LowOffset_Modal);
                 //////////////////////////////create line chart/////////////////////////////////////////////////////
 
-                splitCharts.push(splitChart); 
-               
+                splitCharts.push(splitChart);
+
 
                 processDataForDownload(intervalStartArray, averageArray, TagDesc);
             }
@@ -733,9 +765,10 @@
         }
         //////////////////////////////create line chart/////////////////////////////////////////////////////
 
-        function UpdateChart(KeyLine, color, shape, chart) {
+        function UpdateChart(KeyLine, color, shape, chart, value) {
             // Get the new y-value as a number
-            var newYValue = parseFloat(document.getElementById(KeyLine).value);
+            var newYValue = parseFloat(value);
+             
             var language = document.getElementById('<%= languageField.ClientID %>').value;
 
             var labelForLevel = JSON.parse(language);

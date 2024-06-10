@@ -1241,7 +1241,39 @@ public class DropDownListHandler
     }
 
 
+    public DataTable PFCTableSelectAll(
+           string TagName
+       )
+    {
+        DBNull dbNULL = DBNull.Value;
+        using (SqlConnection scon = new SqlConnection(_connectionString))
+        {
+            try
+            {
+                var dt = new DataTable(); 
+                var cmd = new SqlCommand("usp_PFC_SelectAll", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@TagName", string.IsNullOrEmpty(TagName) ? dbNULL : (object)TagName);
+
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                var sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_PFC_SelectAll' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+    }
 
 
 }
