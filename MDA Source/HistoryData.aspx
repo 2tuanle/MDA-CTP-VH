@@ -219,26 +219,12 @@
     </div>
 
     <div id="dataContainer"></div>
-
-
-    <%--    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/boost.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>--%>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <%--    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script src="https://code.highcharts.com/modules/stock.js"></script>--%>
-
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="/Scripts/chart/highstock.js"></script>
+    <script src="/Scripts/chart/modules/exporting.js"></script>
+    <script src="/Scripts/chart/modules/export-data.js"></script>
+    <script src="/Scripts/chart/modules/accessibility.js"></script>
 
 
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
@@ -543,7 +529,8 @@
                         inactive: {
                             enabled: false  // disable the animation changing background // 
                         }
-                    }
+                    }, 
+                    gapSize: 30
 
                 }
             }, 
@@ -756,7 +743,6 @@
                     cache: false, 
                     async: false,
                     success: function (msg) {
-                        console.log(msg);
                         var arr = jQuery.makeArray(msg.d.split(','));
                         HighThreshold_Modal = arr[0];
                         LowThreshold_Modal = arr[1];

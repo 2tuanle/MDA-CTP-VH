@@ -185,6 +185,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="HistoryData.aspx" />
+    <Content Include="Scripts\chart\highstock.js" />
+    <Content Include="Scripts\chart\modules\accessibility.js" />
+    <Content Include="Scripts\chart\modules\export-data.js" />
+    <Content Include="Scripts\chart\modules\exporting.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Sound\AlarmSound.mp3" />
