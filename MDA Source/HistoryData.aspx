@@ -414,8 +414,12 @@
             },
 
             plotOptions: {
-                line: {
-                    lineWidth: 1 // Set the line width
+                 line: {
+                    lineWidth: 1,
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: true
                 }
             },
 
@@ -481,7 +485,7 @@
             },
             series: [{
                 data: [],
-                lineWidth: 0.5,
+                lineWidth:1,
 
                 connectNulls: false
 
@@ -527,6 +531,22 @@
 
             },
 
+            plotOptions: {
+                line: {
+                    lineWidth: 1
+                    //dataLabels: {
+                    //    enabled: true
+                    //}
+                },
+                series: {
+                    states: {
+                        inactive: {
+                            enabled: false  // disable the animation changing background // 
+                        }
+                    }
+
+                }
+            }, 
             title: {
                 text: '',
 
@@ -561,10 +581,7 @@
                 }
             },
             yAxis: {
-                min: 0,
-
-
-
+                min: 0, 
             },
             tooltip: {
                 formatter: function () {
@@ -572,10 +589,10 @@
 
                     var date = new Date(this.x);
                     return date.toLocaleString("en-US", { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-                        + " Value: " + this.y + " " + this.series.name;
+                        + " Value: " + this.y + " " + this.series.name; 
                 },
                 style: {
-                    fontSize: '16px',
+                    fontSize: '12px',
 
                     align: 'left'
                 },
@@ -641,25 +658,32 @@
 
             const signalOptions = {
                 chart: {
-                    height: 450,
+                    height: 600,
                     type: 'line',
                     renderTo: containerId,
+                    spacing: [50, 0, 50, 0]
                 },
                 series: [{
-                    lineWidth: 0.9,
+                    lineWidth: 1,
                     name: seriesName,
                     data: data,
-                    connectNulls: false,
+                    //marker: {
+                    //    enabled: true,
+                    //    radius: 2
+                    //},
+                    connectNulls: false
                 }],
-                yAxis: { 
+                yAxis: {
+                    endOnTick: true,
+                    maxPadding: 0.1,
                     title: {
                         text: Unit,
                         style: {
                             fontSize: '13px',
                             fontWeight: 'bold'
                         }
-                    } 
-
+                    }  
+                      
                 }
 
             };
@@ -749,10 +773,10 @@
                 const splitChart = createChart(containerId, TagDesc, data_chart, titleChart);
                 splitChart.update(Update_Chart_Option);
                 //////////////////////////////create line chart/////////////////////////////////////////////////////
-                UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart, HighThreshold_Modal);
+                UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart, LowOffset_Modal);
                 UpdateChart('LowThreshold_Modal', 'Green', 'triangle-down', splitChart, LowThreshold_Modal);
-                UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart, HighOffset_Modal);
-                UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart, LowOffset_Modal);
+                UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart, HighThreshold_Modal);
+                UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart, HighOffset_Modal);
                 //////////////////////////////create line chart/////////////////////////////////////////////////////
 
                 splitCharts.push(splitChart);
@@ -809,12 +833,12 @@
                     type: 'line',
                     data: [[minX, newYValue], [maxX, newYValue]],
                     lineWidth: 1,
-                    color: color,
                     marker: {
                         symbol: shape,
 
                         lineWidth: 2
-                    }
+                    },
+                    color: color
                 };
 
                 chart.addSeries(constantSeriesOptions);
