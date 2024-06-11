@@ -13,13 +13,20 @@
         <link href="Dist/Style_Alarm.css" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/2767141d82.js" crossorigin="anonymous"></script>
 
-
+<%--
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/series-label.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-         <script src="https://code.highcharts.com/modules/stock.js"></script>
+         <script src="https://code.highcharts.com/modules/stock.js"></script>--%>
+        <script src="/Scripts/chart/highcharts.js"></script>
+        <script src="/Scripts/chart/modules/series-label.js"></script>
+        <script src="/Scripts/chart/modules/exporting.js"></script>
+        <script src="/Scripts/chart/modules/export-data.js"></script>
+        <script src="/Scripts/chart/modules/accessibility.js"></script>
+        <script src="/Scripts/chart/modules/stock.js"></script>
+
         <!-- More scripts -->
 
 
