@@ -217,12 +217,13 @@
     <div id="dataContainer"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/Scripts/chart/highstock.js"></script>
+    <script src="/Scripts/chart/highcharts.js"></script>
     <script src="/Scripts/chart/modules/series-label.js"></script>
     <script src="/Scripts/chart/modules/exporting.js"></script>
     <script src="/Scripts/chart/modules/export-data.js"></script>
-    <script src="/Scripts/chart/modules/accessibility.js"></script>
-
+    <script src="/Scripts/chart/modules/accessibility.js"></script> 
+    <script src="Scripts/chart/modules/mouse-wheel-zoom.js"></script>
+        <script src="/Scripts/chart/modules/stock.js"></script>  
     <%--<script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -438,13 +439,11 @@
             },
             xAxis: {
                 type: 'datetime',
-
                 title: {
                     style: {
                         fontSize: '25px'
                     }
-                },
-                scrollbars: true
+                }
 
             },
             yAxis: {
@@ -499,12 +498,7 @@
                             backgroundColor: '#333333'
                         }
                     }
-                },
-                scrollablePlotArea: {
-                    minWidth: 3500,
-                    scrollPositionX: 1
-                }
-
+                } 
             },
             plotOptions: {
                 line: {
@@ -515,9 +509,9 @@
                         inactive: {
                             enabled: false  // disable the animation changing background // 
                         }
-                    } 
+                    }
                 }
-            }, 
+            },
             title: {
                 text: '',
 
@@ -628,6 +622,9 @@
             const signalOptions = {
                 chart: {
                     type: 'line',
+                    zooming: {
+                        mouseWheel: false
+                    },
                     renderTo: containerId,
                 },
                 series: [{
@@ -636,6 +633,11 @@
                     data: data,
                     connectNulls: false,
                 }],
+                xAxis: {
+                    scrollbar: {
+                        enabled: true
+                    }
+                },
                 yAxis: {
                     title: {
                         text: Unit,

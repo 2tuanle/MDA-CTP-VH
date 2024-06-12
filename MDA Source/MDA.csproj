@@ -190,6 +190,7 @@
     <Content Include="Scripts\chart\modules\accessibility.js" />
     <Content Include="Scripts\chart\modules\export-data.js" />
     <Content Include="Scripts\chart\modules\exporting.js" />
+    <Content Include="Scripts\chart\modules\mouse-wheel-zoom.js" />
     <Content Include="Scripts\chart\modules\series-label.js" />
     <Content Include="Scripts\chart\modules\stock.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.js" />
