@@ -1,14 +1,14 @@
-﻿<%@ Page Title="HistoryData" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HistoryData.aspx.cs" Inherits="MDA_CTP.HistoryData"   %>
+﻿<%@ Page Title="HistoryData" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HistoryData.aspx.cs" Inherits="MDA_CTP.HistoryData" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   
-    <!-- Function - Search -->
- 
 
-<script src="https://kit.fontawesome.com/2767141d82.js" crossorigin="anonymous"></script>
+    <!-- Function - Search -->
+
+
+    <script src="https://kit.fontawesome.com/2767141d82.js" crossorigin="anonymous"></script>
     <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
 
 
     <div>
@@ -188,13 +188,13 @@
 
 
 
-      <asp:HiddenField ID="languageField" runat="server" />
+    <asp:HiddenField ID="languageField" runat="server" />
     <div class="value-inputs" style="display: none;">
-    <input type="text" id="LowOffset_Modal" readonly />
-    <input type="text" id="LowThreshold_Modal" readonly />
-    <input type="text" id="HighThreshold_Modal" readonly />
-    <input type="text" id="HighOffset_Modal" readonly />
-</div>
+        <input type="text" id="LowOffset_Modal" readonly />
+        <input type="text" id="LowThreshold_Modal" readonly />
+        <input type="text" id="HighThreshold_Modal" readonly />
+        <input type="text" id="HighOffset_Modal" readonly />
+    </div>
 
     <!--</div>-->
     <div class="Garph-decord">
@@ -214,7 +214,7 @@
 
     </div>
 
-    <div id="dataContainer"></div> 
+    <div id="dataContainer"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/Scripts/chart/highstock.js"></script>
@@ -322,7 +322,7 @@
                 var Data_TagName = $('#Input-Multiple1').val();
                 var Data_Factory = document.getElementById('<%= DropDownList1.ClientID %>').value;
                 var Data_Line = document.getElementById('<%= DropDownList2.ClientID %>').value;
-               
+
                 // call Ajax back to C# //   
                 $.ajax({
                     type: "POST",
@@ -365,7 +365,7 @@
         });
 
     </script>
- 
+
     <!-- Fucntion to load and process chart -->
 
     <script>
@@ -444,12 +444,12 @@
                         fontSize: '25px'
                     }
                 },
-                scrollbars : true
+                scrollbars: true
 
             },
             yAxis: {
                 title: {
-                   
+
                     style: {
                         fontSize: '16px'
                     }
@@ -458,7 +458,7 @@
             series: [{
                 data: [],
                 lineWidth: 0.5,
-                
+
                 connectNulls: false
 
             }],
@@ -499,10 +499,25 @@
                             backgroundColor: '#333333'
                         }
                     }
+                },
+                scrollablePlotArea: {
+                    minWidth: 3500,
+                    scrollPositionX: 1
                 }
 
             },
-
+            plotOptions: {
+                line: {
+                    lineWidth: 1
+                },
+                series: {
+                    states: {
+                        inactive: {
+                            enabled: false  // disable the animation changing background // 
+                        }
+                    } 
+                }
+            }, 
             title: {
                 text: '',
 
@@ -535,9 +550,9 @@
             },
             yAxis: {
                 min: 0,
-                
 
-               
+
+
             },
             tooltip: {
                 formatter: function () {
@@ -577,7 +592,7 @@
 
         function Make_Send_Text(KeyMode) {
 
-            if (KeyMode == "Average") {  
+            if (KeyMode == "Average") {
                 flagcheck = false;
                 if ($('#DropDownList8').val() == "") {
 
@@ -609,7 +624,7 @@
             );
         }
 
-        function createChart(containerId, seriesName, data,  Unit) {
+        function createChart(containerId, seriesName, data, Unit) {
             const signalOptions = {
                 chart: {
                     type: 'line',
@@ -629,7 +644,7 @@
                             fontWeight: 'bold'
                         }
                     }
-   
+
                 }
 
             };
@@ -637,7 +652,7 @@
             return new Highcharts.Chart(signalOptions);
         }
 
-        function processDataForDownload( intervalStartArray, averageArray, TagDesc) {
+        function processDataForDownload(intervalStartArray, averageArray, TagDesc) {
             function formatDate(date) {
                 const options = {
                     year: 'numeric',
@@ -663,12 +678,12 @@
 
         function processChildChart(data) {
             const Data_Receive = processChartData(data);
-            Data_download = [];  
+            Data_download = [];
             const container = document.getElementById('container');
             container.style.overflow = ''; // Remove the 'hidden' value
             container.innerHTML = '';
 
-            
+
             let Chart_index = 0;
             for (const [tagName, dataList] of Object.entries(Data_Receive)) {
                 const containerId = `container${Chart_index++}`;
@@ -681,62 +696,62 @@
                 const Unit = lastEntry[0][1]; // Accessing the second element of the last entry
                 const TypeData = lastEntry[0][2];
 
-                var titleChart = TypeData + " - " + Unit; 
+                var titleChart = TypeData + " - " + Unit;
 
                 const mapDataProperty = prop => dataList.map(item => item[prop]);
                 const intervalStartArray = mapDataProperty('IntervalStart').map(date => new Date(date).getTime());
                 const averageArray = mapDataProperty('Average').map(parseFloat);
-               /* const TagDesc = mapDataProperty('TagDesc');*/
+                /* const TagDesc = mapDataProperty('TagDesc');*/
                 const data_chart = intervalStartArray.map((timestamp, index) => [timestamp, averageArray[index]]);
-              var HighThreshold_Modal = 0;
- var LowThreshold_Modal = 0;
- var HighOffset_Modal = 0;
- var LowOffset_Modal = 0;
- $.ajax({
+                var HighThreshold_Modal = 0;
+                var LowThreshold_Modal = 0;
+                var HighOffset_Modal = 0;
+                var LowOffset_Modal = 0;
+                $.ajax({
 
-     type: "POST",
-     url: "HistoryData.aspx/Load_Data_PFC",
-     data: "{'tagName': '" + tagName + "'}",
-     contentType: "application/json; charset=utf-8",
-     dataType: "json",
-     cache: false,
-     async: false,
-     success: function (msg) {
-         var arr = jQuery.makeArray(msg.d.split(','));
-         HighThreshold_Modal = arr[0];
-         LowThreshold_Modal = arr[1];
-         HighOffset_Modal = parseFloat(arr[0]) + parseFloat(arr[2]);
-         LowOffset_Modal = parseFloat(arr[1]) - parseFloat(arr[3]);
-     },
-     error: function (xhr, textStatus, errorThrown) {
-         console.log('Error in Operation');
-     }
- });
+                    type: "POST",
+                    url: "HistoryData.aspx/Load_Data_PFC",
+                    data: "{'tagName': '" + tagName + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    async: false,
+                    success: function (msg) {
+                        var arr = jQuery.makeArray(msg.d.split(','));
+                        HighThreshold_Modal = arr[0];
+                        LowThreshold_Modal = arr[1];
+                        HighOffset_Modal = parseFloat(arr[0]) + parseFloat(arr[2]);
+                        LowOffset_Modal = parseFloat(arr[1]) - parseFloat(arr[3]);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log('Error in Operation');
+                    }
+                });
 
- ////////////////////////////////////////////// 
+                ////////////////////////////////////////////// 
 
- const splitChart = createChart(containerId, TagDesc, data_chart, titleChart);
- splitChart.update(Update_Chart_Option);
- //////////////////////////////create line chart/////////////////////////////////////////////////////
- UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart, LowOffset_Modal);
- UpdateChart('LowThreshold_Modal', 'Green', 'triangle-down', splitChart, LowThreshold_Modal);
- UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart, HighThreshold_Modal);
- UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart, HighOffset_Modal);
- //////////////////////////////create line chart/////////////////////////////////////////////////////
- splitCharts.push(splitChart);
+                const splitChart = createChart(containerId, TagDesc, data_chart, titleChart);
+                splitChart.update(Update_Chart_Option);
+                //////////////////////////////create line chart/////////////////////////////////////////////////////
+                UpdateChart('LowOffset_Modal', 'Red', 'triangle-down', splitChart, LowOffset_Modal);
+                UpdateChart('LowThreshold_Modal', 'Green', 'triangle-down', splitChart, LowThreshold_Modal);
+                UpdateChart('HighThreshold_Modal', 'Green', 'triangle', splitChart, HighThreshold_Modal);
+                UpdateChart('HighOffset_Modal', 'Red', 'triangle', splitChart, HighOffset_Modal);
+                //////////////////////////////create line chart/////////////////////////////////////////////////////
+                splitCharts.push(splitChart);
 
-                processDataForDownload( intervalStartArray, averageArray, TagDesc);
+                processDataForDownload(intervalStartArray, averageArray, TagDesc);
             }
-            
+
             chart.redraw();
         }
-  //////////////////////////////create line chart/////////////////////////////////////////////////////
+        //////////////////////////////create line chart/////////////////////////////////////////////////////
 
-  function UpdateChart(KeyLine, color, shape, chart, value) {
-      // Get the new y-value as a number
-      var newYValue = parseFloat(value);
+        function UpdateChart(KeyLine, color, shape, chart, value) {
+            // Get the new y-value as a number
+            var newYValue = parseFloat(value);
 
-      var language = document.getElementById('<%= languageField.ClientID %>').value;
+            var language = document.getElementById('<%= languageField.ClientID %>').value;
 
             var labelForLevel = JSON.parse(language);
 
@@ -1114,6 +1129,6 @@
     </script>
 
 
-    
+
 
 </asp:Content>
