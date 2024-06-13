@@ -240,6 +240,18 @@
   <data name="Deep Well Press 01 Right Pressure.Text" xml:space="preserve">
     <value>Deep Well Press 01 Right Pressure</value>
   </data>
+  <data name="Deep Well Press 02 Left Press Time.Text" xml:space="preserve">
+    <value>Deep Well Press 02 Left Press Time</value>
+  </data>
+  <data name="Deep Well Press 02 Left Pressure.Text" xml:space="preserve">
+    <value>Deep Well Press 02 Left Pressure</value>
+  </data>
+  <data name="Deep Well Press 02 Right Press Time.Text" xml:space="preserve">
+    <value>Deep Well Press 02 Right Press Time</value>
+  </data>
+  <data name="Deep Well Press 02 Right Pressure.Text" xml:space="preserve">
+    <value>Deep Well Press 02 Right Pressure</value>
+  </data>
   <data name="Deep Well Press.Text" xml:space="preserve">
     <value>Deep Well Press</value>
   </data>

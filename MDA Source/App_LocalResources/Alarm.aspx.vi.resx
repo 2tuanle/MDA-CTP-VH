@@ -225,6 +225,18 @@
   <data name="Deep Well Press 01 Right Pressure.Text" xml:space="preserve">
     <value>Máy ép tổng lực 1 - Áp lực phải</value>
   </data>
+  <data name="Deep Well Press 02 Left Press Time.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 2 - Thời gian áp lực trái</value>
+  </data>
+  <data name="Deep Well Press 02 Left Pressure.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 2 - Áp lực trái  </value>
+  </data>
+  <data name="Deep Well Press 02 Right Press Time.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 2 - Thời gian áp lực phải</value>
+  </data>
+  <data name="Deep Well Press 02 Right Pressure.Text" xml:space="preserve">
+    <value>Máy ép tổng lực 2 - Áp lực phải</value>
+  </data>
   <data name="Description.Text" xml:space="preserve">
     <value>Tên tín hiệu </value>
   </data>

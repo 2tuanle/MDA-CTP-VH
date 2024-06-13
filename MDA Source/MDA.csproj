@@ -185,6 +185,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="HistoryData.aspx" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\chart\highcharts.js" />
     <Content Include="Scripts\chart\highstock.js" />
     <Content Include="Scripts\chart\modules\accessibility.js" />

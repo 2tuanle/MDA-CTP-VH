@@ -483,7 +483,7 @@
         var Update_Chart_Option = {
 
             chart: {
-                type: 'line',
+                type: 'line', 
                 animation: Highcharts.svg,
                 zoomType: 'x',
                 panning: true,
@@ -543,10 +543,7 @@
                 }
             },
             yAxis: {
-                min: 0,
-
-
-
+                tickAmount: 6
             },
             tooltip: {
                 formatter: function () {
@@ -792,6 +789,7 @@
                     name: lineName,
                     type: 'line',
                     data: [[minX, newYValue], [maxX, newYValue]],
+                    //data: [[1717978800000, newYValue], [1718009400000, newYValue], [1718065200000, newYValue - 6], [1718095800000, newYValue - 6]],
                     lineWidth: 1,
                     marker: {
                         symbol: shape,
