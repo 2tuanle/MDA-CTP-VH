@@ -342,6 +342,9 @@
   <data name="Heel lasting.Text" xml:space="preserve">
     <value>Máy Ép Gót</value>
   </data>
+  <data name="Gauge Marking.Text" xml:space="preserve">
+    <value>Máy Vẽ Đường</value>
+  </data>
   <data name="HighOffset_Modal.Text" xml:space="preserve">
     <value>Giới hạn trên</value>
   </data>
@@ -437,5 +440,11 @@
   </data>
   <data name="Voltage.Text" xml:space="preserve">
     <value>Điện áp </value>
+  </data>
+  <data name="Gauge Marking 01 Pressure.Text" xml:space="preserve">
+    <value>Máy Vẽ Đường 01 - Áp suất</value>
+  </data>
+  <data name="Gauge Marking 02 Pressure.Text" xml:space="preserve">
+    <value>Máy Vẽ Đường 02 - Áp suất</value>
   </data>
 </root>

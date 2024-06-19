@@ -484,6 +484,7 @@
 
             chart: {
                 type: 'line', 
+                height: 700,
                 animation: Highcharts.svg,
                 zoomType: 'x',
                 panning: true,
@@ -543,7 +544,8 @@
                 }
             },
             yAxis: {
-                tickAmount: 6
+                tickAmount: 6,
+                min:0
             },
             tooltip: {
                 formatter: function () {

@@ -267,6 +267,15 @@
   <data name="Factory.Text" xml:space="preserve">
     <value>Factory</value>
   </data>
+  <data name="Gauge Marking 01 Pressure.Text" xml:space="preserve">
+    <value>Gauge Marking 01 Pressure</value>
+  </data>
+  <data name="Gauge Marking 02 Pressure.Text" xml:space="preserve">
+    <value>Gauge Marking 02 Pressure</value>
+  </data>
+  <data name="Gauge Marking.Text" xml:space="preserve">
+    <value>Gauge Marking</value>
+  </data>
   <data name="Heat Seating Shoe Temperature.Text" xml:space="preserve">
     <value>Heat Seating Shoe Temperature</value>
   </data>

@@ -324,6 +324,12 @@
   <data name="Heel lasting Time.Text" xml:space="preserve">
     <value>Máy ép gót - Thời gian </value>
   </data>
+  <data name="Gauge Marking.Text" xml:space="preserve">
+    <value>Máy Vẽ Đường</value>
+  </data>
+  <data name="Gauge Marking 02 Pressure.Text" xml:space="preserve">
+    <value>Máy Vẽ Đường 02 - Áp suất</value>
+  </data>
   <data name="Heel lasting.Text" xml:space="preserve">
     <value>Máy laser  </value>
   </data>
@@ -422,5 +428,8 @@
   </data>
   <data name="Value.Text" xml:space="preserve">
     <value>Giá trị </value>
+  </data>
+  <data name="Gauge Marking 01 Pressure.Text" xml:space="preserve">
+    <value>Máy Vẽ Đường 01 - Áp suất</value>
   </data>
 </root>
