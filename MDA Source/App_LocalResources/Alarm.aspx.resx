@@ -141,14 +141,26 @@
   <data name="Back Part Molding 01 Cold Temperature Right.Text" xml:space="preserve">
     <value>Back Part Molding 01 Cold Temperature Right</value>
   </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Left Down Setup</value>
+  </data>
   <data name="Back Part Molding 01 Hot Temperature Left Down.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Left Down</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Left Up Setup</value>
   </data>
   <data name="Back Part Molding 01 Hot Temperature Left Up.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Left Up</value>
   </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Right Down Setup</value>
+  </data>
   <data name="Back Part Molding 01 Hot Temperature Right Down.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Right Down</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Right Up Setup</value>
   </data>
   <data name="Back Part Molding 01 Hot Temperature Right Up.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Right Up</value>
@@ -164,6 +176,48 @@
   </data>
   <data name="Back Part Molding 01 Timer 4.Text" xml:space="preserve">
     <value>Back Part Molding 01 Timer 4</value>
+  </data>
+  <data name="Back Part Molding 02 Cold Temperature Left.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Cold Temperature Left</value>
+  </data>
+  <data name="Back Part Molding 02 Cold Temperature Right.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Cold Temperature Right</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Left Down Setup</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Down.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Left Down</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Left Up Setup</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Up.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Left Up</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Right Down Setup</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Down.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Right Down</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Right Up Setup</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Up.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Right Up</value>
+  </data>
+  <data name="Back Part Molding 02 Timer 1.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Timer 1</value>
+  </data>
+  <data name="Back Part Molding 02 Timer 2.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Timer 2</value>
+  </data>
+  <data name="Back Part Molding 02 Timer 3.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Timer 3</value>
+  </data>
+  <data name="Back Part Molding 02 Timer 4.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Timer 4</value>
   </data>
   <data name="Back Part Molding 03 Cold Temperature Left.Text" xml:space="preserve">
     <value>Back Part Molding 03 Cold Temperature Left</value>

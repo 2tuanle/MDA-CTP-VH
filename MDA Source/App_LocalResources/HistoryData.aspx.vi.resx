@@ -420,12 +420,6 @@
   <data name="StartDate.Text" xml:space="preserve">
     <value>Ngày Bắt Đầu </value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value />
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="TagName.Text" xml:space="preserve">
     <value>Dữ Liệu </value>
   </data>
@@ -446,5 +440,29 @@
   </data>
   <data name="Gauge Marking 02 Pressure.Text" xml:space="preserve">
     <value>Máy Vẽ Đường 02 - Áp suất</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Down Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Khuôn nóng trái cài đặt</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Up Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Đầu bò trái cài đặt</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Down Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Khuôn nóng phải cài đặt</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Up Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 1 - Đầu bò phải cài đặt</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Down Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 2 - Khuôn nóng trái cài đặt</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Up Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 2 - Đầu bò trái cài đặt</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Down Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 2 - Khuôn nóng phải cài đặt</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Up Setup.Text" xml:space="preserve">
+    <value>Máy định hình nóng lạnh 2 - Đầu bò phải cài đặt</value>
   </data>
 </root>

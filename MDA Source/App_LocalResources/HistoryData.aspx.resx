@@ -126,17 +126,29 @@
   <data name="Back Part Molding 01 Cold Temperature Right.Text" xml:space="preserve">
     <value>Back Part Molding 01 Cold Temperature Right</value>
   </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Left Down Setup</value>
+  </data>
   <data name="Back Part Molding 01 Hot Temperature Left Down.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Left Down</value>
   </data>
+  <data name="Back Part Molding 01 Hot Temperature Left Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Left Up Setup</value>
+  </data>
   <data name="Back Part Molding 01 Hot Temperature Left Up.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Left Up</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Right Down Setup</value>
   </data>
   <data name="Back Part Molding 01 Hot Temperature Right Down.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Right Down</value>
   </data>
   <data name="Back Part Molding 01 Hot Temperature Right Down.Text1" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Right Down</value>
+  </data>
+  <data name="Back Part Molding 01 Hot Temperature Right Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 01 Hot Temperature Right Up Setup</value>
   </data>
   <data name="Back Part Molding 01 Hot Temperature Right Up.Text" xml:space="preserve">
     <value>Back Part Molding 01 Hot Temperature Right Up</value>
@@ -162,14 +174,26 @@
   <data name="Back Part Molding 02 Cold Temperature Right.Text" xml:space="preserve">
     <value>Back Part Molding 02 Cold Temperature Right</value>
   </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Left Down Setup</value>
+  </data>
   <data name="Back Part Molding 02 Hot Temperature Left Down.Text" xml:space="preserve">
     <value>Back Part Molding 02 Hot Temperature Left Down</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Left Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Left Up Setup</value>
   </data>
   <data name="Back Part Molding 02 Hot Temperature Left Up.Text" xml:space="preserve">
     <value>Back Part Molding 02 Hot Temperature Left Up</value>
   </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Down Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Right Down Setup</value>
+  </data>
   <data name="Back Part Molding 02 Hot Temperature Right Down.Text" xml:space="preserve">
     <value>Back Part Molding 02 Hot Temperature Right Down</value>
+  </data>
+  <data name="Back Part Molding 02 Hot Temperature Right Up Setup.Text" xml:space="preserve">
+    <value>Back Part Molding 02 Hot Temperature Right Up Setup</value>
   </data>
   <data name="Back Part Molding 02 Hot Temperature Right Up.Text" xml:space="preserve">
     <value>Back Part Molding 02 Hot Temperature Right Up</value>
